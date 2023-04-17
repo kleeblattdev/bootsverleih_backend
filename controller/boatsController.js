@@ -20,8 +20,8 @@ export const addBoat = async (req, res) => {
 	res.json();
 };
 
-//remove boat
-export const removeBoat = async (req, res) => {
+//delete boat
+export const deleteBoat = async (req, res) => {
 	const db = await getDb();
 	const del = await db
 		.collection(COL)

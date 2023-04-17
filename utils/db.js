@@ -6,7 +6,7 @@ const DB = process.env.MONGO_DB;
 const client = new MongoClient(URI);
 let db;
 
-export const getDB = async () => {
+export const getDb = async () => {
 	if (db) return db;
 	else {
 		await client.connect();

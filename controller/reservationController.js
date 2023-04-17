@@ -1,5 +1,5 @@
 import { ObjectId } from "mongodb";
-import { getDB } from "../utils/db";
+import { getDb } from "../utils/db.js";
 
 const COL = "reservations";
 
@@ -23,6 +23,8 @@ export const addReservation = async (req, res) => {
 //delete a reservation
 export const deleteReservation = async (req, res) => {
 	const db = await getDb();
-	const del = db.collection(COL).findOneAndDelete({ _id: req.body.id });
+	const del = db
+		.collection(COL)
+		.findOneAndDelete({ _id: new ObjectId(req.body.id) });
 	res.end();
 };
