@@ -6,7 +6,6 @@ import multer from "multer";
 import "./config/config.js";
 import {
 	addBoat,
-	addReservationEmbedded,
 	deleteBoat,
 	getBoatDetail,
 	getBoats,

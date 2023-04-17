@@ -33,6 +33,16 @@ export const addReservation = async (req, res) => {
 	res.json();
 };
 
+/* export const addReservationVal = async (req, res) => {
+	const db = await getDb();
+	const doc = await db.createCollection(COL, {
+		validator: {
+			$jsonSchema: { bsonType: "object", start: "Date", end: "Date" },
+		},
+	});
+	res.json();
+}; */
+
 // Handler function for deleting a reservation from the database
 export const deleteReservation = async (req, res) => {
 	const db = await getDb();
