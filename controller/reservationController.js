@@ -3,7 +3,7 @@ import { getDb } from "../utils/db.js";
 
 const COL = "reservations";
 
-//get all reservations
+//Handler function for retrieving all reservations from the database
 export const getReservations = async (req, res) => {
 	const db = await getDb();
 	const docs = await db.collection(COL).find().toArray();
@@ -13,7 +13,7 @@ export const getReservations = async (req, res) => {
 	}
 };
 
-//get reservation Detail
+//Handler function for retrieving one reservation by its ID from the database
 export const getReservationDetail = async (req, res) => {
 	const db = await getDb();
 	const doc = await db
@@ -26,14 +26,14 @@ export const getReservationDetail = async (req, res) => {
 	}
 };
 
-//add reservation
+// Handler function for adding a new reservation to the database
 export const addReservation = async (req, res) => {
 	const db = await getDb();
 	const docs = await db.collection(COL).insertOne(req.body);
 	res.json();
 };
 
-//delete a reservation
+// Handler function for deleting a reservation from the database
 export const deleteReservation = async (req, res) => {
 	const db = await getDb();
 	const del = db
