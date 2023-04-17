@@ -13,6 +13,19 @@ export const getReservations = async (req, res) => {
 	}
 };
 
+//get reservation Detail
+export const getReservationDetail = async (req, res) => {
+	const db = await getDb();
+	const doc = await db
+		.collection(COL)
+		.find({ _id: new ObjectId(req.params.reservationId) })
+		.toArray();
+	if (doc === null) res.end();
+	else {
+		res.json(doc);
+	}
+};
+
 //add reservation
 export const addReservation = async (req, res) => {
 	const db = await getDb();
