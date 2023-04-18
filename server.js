@@ -32,7 +32,7 @@ app.use(express.json());
 //Handling GET requests for all boats
 app.get("/api/v1/boats", getBoats);
 //Handling GET Request for a single boat
-app.get("/api/v1/:boatId", getBoatDetail);
+app.get("/api/v1/boats/:boatId", getBoatDetail);
 //Handling POST request for adding a new boat
 app.post("/api/v1/boats", upload.none(), addBoat);
 //Handling DELETE request for deleting a boat
@@ -42,7 +42,7 @@ app.delete("/api/v1/boats", deleteBoat);
 //Handling GET requests for all reservations
 app.get("/api/v1/reservation", getReservations);
 //Handling GET requests for a single reservation
-app.get("/api/v1/:reservationId", getReservationDetail);
+app.get("/api/v1/reservation/:reservationId", getReservationDetail);
 //Handling POST request for adding i new reservation
 app.post("/api/v1/reservation", upload.none(), addReservation);
 //Handling DELETE request for deleting a reservation
