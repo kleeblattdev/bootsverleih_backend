@@ -45,6 +45,7 @@ export const addReservation = async (req, res) => {
 
 // Handler function for deleting a reservation from the database
 export const deleteReservation = async (req, res) => {
+	console.log(req.body.id);
 	const db = await getDb();
 	const del = db
 		.collection(COL)
